@@ -20,7 +20,11 @@ namespace core.config.mintmark_temp
 
         public int[] MoveID { get; set; }
 
+        public int Connect { get; set; }
+
         public int Grade { get; set; }
+
+        public int Hide { get; set; }
 
         public int ID { get; set; }
 
@@ -60,6 +64,7 @@ namespace core.config.mintmark_temp
                     BaseAttriValue[j] = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
                 }
             }
+            Connect = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             Des = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             EffectDes = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
@@ -72,6 +77,7 @@ namespace core.config.mintmark_temp
                 }
             }
             Grade = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+            Hide = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             ID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             Level = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             Max = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
