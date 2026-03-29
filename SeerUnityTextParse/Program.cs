@@ -55,12 +55,19 @@ foreach (var a in assemblies)
             {
                 if (m.Name == "Parse" && m.GetParameters().Length == 1)
                 {
-                    m.Invoke(obj, [data]);
-                    var getItems = obj.GetType().GetMethod("getItems");
-                    File.WriteAllText($"{FOLDER_PATH_OUTPUT}{fileName}.json",
-                        JsonSerializer.Serialize(
-                            getItems == null ? obj : getItems.Invoke(obj, [])
-                        , serOpt));
+                    try
+                    {
+                        m.Invoke(obj, [data]);
+                        var getItems = obj.GetType().GetMethod("getItems");
+                        File.WriteAllText($"{FOLDER_PATH_OUTPUT}{fileName}.json",
+                            JsonSerializer.Serialize(
+                                getItems == null ? obj : getItems.Invoke(obj, [])
+                            , serOpt));
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"{t.Namespace} 解析失败。。。");
+                    }
                     break;
                 }
             }
