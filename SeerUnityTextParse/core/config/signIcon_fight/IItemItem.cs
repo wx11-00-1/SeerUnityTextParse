@@ -16,8 +16,6 @@ namespace core.config.signIcon_fight
 
         public string[] spDes { get; set; }
 
-        public string SpDes { get; set; }
-
         public string[] spicon { get; set; }
 
         public string[] sptips { get; set; }
@@ -38,7 +36,6 @@ namespace core.config.signIcon_fight
         {
             Des = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             NumDes = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
-            SpDes = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             className = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             dec = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
