@@ -14,6 +14,8 @@ namespace core.config
 
         public string name { get; set; }
 
+        public string skins { get; set; }
+
         public int attack { get; set; }
 
         public int compose { get; set; }
@@ -24,7 +26,11 @@ namespace core.config
 
         public int CountNum { get; set; }
 
+        public int CountType { get; set; }
+
         public int Display { get; set; }
+
+        public int headpicID { get; set; }
 
         public int health { get; set; }
 
@@ -47,6 +53,7 @@ namespace core.config
             BuffId = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             BuffParam = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             CountNum = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+            CountType = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             Display = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             attack = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             cardTxt = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
@@ -54,6 +61,7 @@ namespace core.config
             composeTo = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             cost = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             des = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+            headpicID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             health = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             id = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             isUse = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
@@ -61,6 +69,7 @@ namespace core.config
             name = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             nature = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             picID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+            skins = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
             subtype = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
             type = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
         }

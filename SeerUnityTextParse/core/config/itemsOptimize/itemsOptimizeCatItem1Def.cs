@@ -2,10 +2,10 @@
 
 namespace core.config.itemsOptimize
 {
-	// Token: 0x02001ED1 RID: 7889
+	// Token: 0x020028D2 RID: 10450
 	public class itemsOptimizeCatItem1Def : ItemData
 	{
-		// Token: 0x0600EC09 RID: 60425 RVA: 0x003EF5FC File Offset: 0x003ED7FC
+		// Token: 0x06015003 RID: 86019 RVA: 0x0057D474 File Offset: 0x0057B674
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
 			this.catID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
@@ -28,58 +28,58 @@ namespace core.config.itemsOptimize
 			this.actionDir = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}
 
-		// Token: 0x0400EF33 RID: 61235
+		// Token: 0x04013F64 RID: 81764
 		public int catID;
 
-		// Token: 0x0400EF34 RID: 61236
+		// Token: 0x04013F65 RID: 81765
 		public int ID;
 
-		// Token: 0x0400EF35 RID: 61237
+		// Token: 0x04013F66 RID: 81766
 		public string Name;
 
-		// Token: 0x0400EF36 RID: 61238
+		// Token: 0x04013F67 RID: 81767
 		public int Max;
 
-		// Token: 0x0400EF37 RID: 61239
+		// Token: 0x04013F68 RID: 81768
 		public int RepairPrice;
 
-		// Token: 0x0400EF38 RID: 61240
+		// Token: 0x04013F69 RID: 81769
 		public int Bean;
 
-		// Token: 0x0400EF39 RID: 61241
+		// Token: 0x04013F6A RID: 81770
 		public int Hide;
 
-		// Token: 0x0400EF3A RID: 61242
+		// Token: 0x04013F6B RID: 81771
 		public int isSpecial;
 
-		// Token: 0x0400EF3B RID: 61243
+		// Token: 0x04013F6C RID: 81772
 		public int LifeTime;
 
-		// Token: 0x0400EF3C RID: 61244
+		// Token: 0x04013F6D RID: 81773
 		public int Price;
 
-		// Token: 0x0400EF3D RID: 61245
+		// Token: 0x04013F6E RID: 81774
 		public int purpose;
 
-		// Token: 0x0400EF3E RID: 61246
+		// Token: 0x04013F6F RID: 81775
 		public int Sort;
 
-		// Token: 0x0400EF3F RID: 61247
+		// Token: 0x04013F70 RID: 81776
 		public float speed;
 
-		// Token: 0x0400EF40 RID: 61248
+		// Token: 0x04013F71 RID: 81777
 		public string type;
 
-		// Token: 0x0400EF41 RID: 61249
+		// Token: 0x04013F72 RID: 81778
 		public int UseMax;
 
-		// Token: 0x0400EF42 RID: 61250
+		// Token: 0x04013F73 RID: 81779
 		public int VipOnly;
 
-		// Token: 0x0400EF43 RID: 61251
+		// Token: 0x04013F74 RID: 81780
 		public int wd;
 
-		// Token: 0x0400EF44 RID: 61252
+		// Token: 0x04013F75 RID: 81781
 		public int actionDir;
 	}
 }

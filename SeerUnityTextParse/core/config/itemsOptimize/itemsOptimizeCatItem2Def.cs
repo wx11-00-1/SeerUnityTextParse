@@ -2,7 +2,7 @@
 
 namespace core.config.itemsOptimize
 {
-	// Token: 0x02001ED2 RID: 7890
+	// Token: 0x020028D3 RID: 10451
 	public class itemsOptimizeCatItem2Def : ItemData
 	{
 	}

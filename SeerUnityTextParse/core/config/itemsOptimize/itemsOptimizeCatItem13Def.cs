@@ -2,94 +2,94 @@
 
 namespace core.config.itemsOptimize
 {
-	// Token: 0x02001EDA RID: 7898
+	// Token: 0x020028DB RID: 10459
 	public class itemsOptimizeCatItem13Def : ItemData
 	{
-		// Token: 0x0600EC3D RID: 60477 RVA: 0x003EFD64 File Offset: 0x003EDF64
+		// Token: 0x06015037 RID: 86071 RVA: 0x0057DBDC File Offset: 0x0057BDDC
 		public override int GetID()
 		{
 			return this.ID;
 		}
 
-		// Token: 0x0600EC3E RID: 60478 RVA: 0x003EFD6C File Offset: 0x003EDF6C
+		// Token: 0x06015038 RID: 86072 RVA: 0x0057DBE4 File Offset: 0x0057BDE4
 		public override string GetName()
 		{
 			return this.Name;
 		}
 
-		// Token: 0x0600EC3F RID: 60479 RVA: 0x003EFD74 File Offset: 0x003EDF74
+		// Token: 0x06015039 RID: 86073 RVA: 0x0057DBEC File Offset: 0x0057BDEC
 		public override int GetMax()
 		{
 			return this.Max;
 		}
 
-		// Token: 0x0600EC40 RID: 60480 RVA: 0x003EFD7C File Offset: 0x003EDF7C
+		// Token: 0x0601503A RID: 86074 RVA: 0x0057DBF4 File Offset: 0x0057BDF4
 		public override int GetCatID()
 		{
 			return this.catID;
 		}
 
-		// Token: 0x0600EC41 RID: 60481 RVA: 0x003EFD84 File Offset: 0x003EDF84
+		// Token: 0x0601503B RID: 86075 RVA: 0x0057DBFC File Offset: 0x0057BDFC
 		public override int GetBean()
 		{
 			return this.Bean;
 		}
 
-		// Token: 0x0600EC42 RID: 60482 RVA: 0x003EFD8C File Offset: 0x003EDF8C
+		// Token: 0x0601503C RID: 86076 RVA: 0x0057DC04 File Offset: 0x0057BE04
 		public override bool IsHide()
 		{
 			return this.Hide != 0;
 		}
 
-		// Token: 0x0600EC43 RID: 60483 RVA: 0x003EFD97 File Offset: 0x003EDF97
+		// Token: 0x0601503D RID: 86077 RVA: 0x0057DC0F File Offset: 0x0057BE0F
 		public override bool IsSpecial()
 		{
 			return this.isSpecial != 0;
 		}
 
-		// Token: 0x0600EC44 RID: 60484 RVA: 0x003EFDA2 File Offset: 0x003EDFA2
+		// Token: 0x0601503E RID: 86078 RVA: 0x0057DC1A File Offset: 0x0057BE1A
 		public override int Getpurpose()
 		{
 			return this.purpose;
 		}
 
-		// Token: 0x0600EC45 RID: 60485 RVA: 0x003EFDAA File Offset: 0x003EDFAA
+		// Token: 0x0601503F RID: 86079 RVA: 0x0057DC22 File Offset: 0x0057BE22
 		public override int GetSort()
 		{
 			return this.Sort;
 		}
 
-		// Token: 0x0600EC46 RID: 60486 RVA: 0x003EFDB2 File Offset: 0x003EDFB2
+		// Token: 0x06015040 RID: 86080 RVA: 0x0057DC2A File Offset: 0x0057BE2A
 		public override float Getspeed()
 		{
 			return this.speed;
 		}
 
-		// Token: 0x0600EC47 RID: 60487 RVA: 0x003EFDBA File Offset: 0x003EDFBA
+		// Token: 0x06015041 RID: 86081 RVA: 0x0057DC32 File Offset: 0x0057BE32
 		public override string Gettype()
 		{
 			return this.type;
 		}
 
-		// Token: 0x0600EC48 RID: 60488 RVA: 0x003EFDC2 File Offset: 0x003EDFC2
+		// Token: 0x06015042 RID: 86082 RVA: 0x0057DC3A File Offset: 0x0057BE3A
 		public override int GetUseMax()
 		{
 			return this.UseMax;
 		}
 
-		// Token: 0x0600EC49 RID: 60489 RVA: 0x003EFDCA File Offset: 0x003EDFCA
+		// Token: 0x06015043 RID: 86083 RVA: 0x0057DC42 File Offset: 0x0057BE42
 		public override bool IsSuper()
 		{
 			return this.VipOnly != 0;
 		}
 
-		// Token: 0x0600EC4A RID: 60490 RVA: 0x003EFDD5 File Offset: 0x003EDFD5
+		// Token: 0x06015044 RID: 86084 RVA: 0x0057DC4D File Offset: 0x0057BE4D
 		public override int Getwd()
 		{
 			return this.wd;
 		}
 
-		// Token: 0x0600EC4B RID: 60491 RVA: 0x003EFDE0 File Offset: 0x003EDFE0
+		// Token: 0x06015045 RID: 86085 RVA: 0x0057DC58 File Offset: 0x0057BE58
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
 			this.catID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
@@ -108,46 +108,46 @@ namespace core.config.itemsOptimize
 			this.wd = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}
 
-		// Token: 0x0400EF9B RID: 61339
+		// Token: 0x04013FCC RID: 81868
 		public int catID;
 
-		// Token: 0x0400EF9C RID: 61340
+		// Token: 0x04013FCD RID: 81869
 		public int ID;
 
-		// Token: 0x0400EF9D RID: 61341
+		// Token: 0x04013FCE RID: 81870
 		public string Name;
 
-		// Token: 0x0400EF9E RID: 61342
+		// Token: 0x04013FCF RID: 81871
 		public int Max;
 
-		// Token: 0x0400EF9F RID: 61343
+		// Token: 0x04013FD0 RID: 81872
 		public int Bean;
 
-		// Token: 0x0400EFA0 RID: 61344
+		// Token: 0x04013FD1 RID: 81873
 		public int Hide;
 
-		// Token: 0x0400EFA1 RID: 61345
+		// Token: 0x04013FD2 RID: 81874
 		public int isSpecial;
 
-		// Token: 0x0400EFA2 RID: 61346
+		// Token: 0x04013FD3 RID: 81875
 		public int purpose;
 
-		// Token: 0x0400EFA3 RID: 61347
+		// Token: 0x04013FD4 RID: 81876
 		public int Sort;
 
-		// Token: 0x0400EFA4 RID: 61348
+		// Token: 0x04013FD5 RID: 81877
 		public float speed;
 
-		// Token: 0x0400EFA5 RID: 61349
+		// Token: 0x04013FD6 RID: 81878
 		public string type;
 
-		// Token: 0x0400EFA6 RID: 61350
+		// Token: 0x04013FD7 RID: 81879
 		public int UseMax;
 
-		// Token: 0x0400EFA7 RID: 61351
+		// Token: 0x04013FD8 RID: 81880
 		public int VipOnly;
 
-		// Token: 0x0400EFA8 RID: 61352
+		// Token: 0x04013FD9 RID: 81881
 		public int wd;
 	}
 }

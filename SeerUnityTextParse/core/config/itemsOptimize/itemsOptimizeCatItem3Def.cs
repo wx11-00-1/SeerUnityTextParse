@@ -2,10 +2,10 @@
 
 namespace core.config.itemsOptimize
 {
-	// Token: 0x02001ED3 RID: 7891
+	// Token: 0x020028D4 RID: 10452
 	public class itemsOptimizeCatItem3Def : ItemData
 	{
-		// Token: 0x0600EC0C RID: 60428 RVA: 0x003EF714 File Offset: 0x003ED914
+		// Token: 0x06015006 RID: 86022 RVA: 0x0057D58C File Offset: 0x0057B78C
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
 			this.catID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
@@ -28,58 +28,58 @@ namespace core.config.itemsOptimize
 			this.wd = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}
 
-		// Token: 0x0400EF45 RID: 61253
+		// Token: 0x04013F76 RID: 81782
 		public int catID;
 
-		// Token: 0x0400EF46 RID: 61254
+		// Token: 0x04013F77 RID: 81783
 		public int ID;
 
-		// Token: 0x0400EF47 RID: 61255
+		// Token: 0x04013F78 RID: 81784
 		public string Name;
 
-		// Token: 0x0400EF48 RID: 61256
+		// Token: 0x04013F79 RID: 81785
 		public int Max;
 
-		// Token: 0x0400EF49 RID: 61257
+		// Token: 0x04013F7A RID: 81786
 		public int Bean;
 
-		// Token: 0x0400EF4A RID: 61258
+		// Token: 0x04013F7B RID: 81787
 		public int EvRemove;
 
-		// Token: 0x0400EF4B RID: 61259
+		// Token: 0x04013F7C RID: 81788
 		public int Hide;
 
-		// Token: 0x0400EF4C RID: 61260
+		// Token: 0x04013F7D RID: 81789
 		public int IncreMonLvTo;
 
-		// Token: 0x0400EF4D RID: 61261
+		// Token: 0x04013F7E RID: 81790
 		public int ItemType;
 
-		// Token: 0x0400EF4E RID: 61262
+		// Token: 0x04013F7F RID: 81791
 		public string LimitPetClass;
 
-		// Token: 0x0400EF4F RID: 61263
+		// Token: 0x04013F80 RID: 81792
 		public int PP;
 
-		// Token: 0x0400EF50 RID: 61264
+		// Token: 0x04013F81 RID: 81793
 		public int Price;
 
-		// Token: 0x0400EF51 RID: 61265
+		// Token: 0x04013F82 RID: 81794
 		public int purpose;
 
-		// Token: 0x0400EF52 RID: 61266
+		// Token: 0x04013F83 RID: 81795
 		public int Rarity;
 
-		// Token: 0x0400EF53 RID: 61267
+		// Token: 0x04013F84 RID: 81796
 		public int Sort;
 
-		// Token: 0x0400EF54 RID: 61268
+		// Token: 0x04013F85 RID: 81797
 		public int UseMax;
 
-		// Token: 0x0400EF55 RID: 61269
+		// Token: 0x04013F86 RID: 81798
 		public int VipOnly;
 
-		// Token: 0x0400EF56 RID: 61270
+		// Token: 0x04013F87 RID: 81799
 		public int wd;
 	}
 }

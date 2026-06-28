@@ -2,10 +2,10 @@
 
 namespace core.config.itemsOptimize
 {
-	// Token: 0x02001ED0 RID: 7888
+	// Token: 0x020028D1 RID: 10449
 	public class itemsOptimizeCatItem0Def : ItemData
 	{
-		// Token: 0x0600EC07 RID: 60423 RVA: 0x003EF528 File Offset: 0x003ED728
+		// Token: 0x06015001 RID: 86017 RVA: 0x0057D3A0 File Offset: 0x0057B5A0
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
 			this.catID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
@@ -24,46 +24,46 @@ namespace core.config.itemsOptimize
 			this.wd = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}
 
-		// Token: 0x0400EF25 RID: 61221
+		// Token: 0x04013F56 RID: 81750
 		public int catID;
 
-		// Token: 0x0400EF26 RID: 61222
+		// Token: 0x04013F57 RID: 81751
 		public int ID;
 
-		// Token: 0x0400EF27 RID: 61223
+		// Token: 0x04013F58 RID: 81752
 		public string Name;
 
-		// Token: 0x0400EF28 RID: 61224
+		// Token: 0x04013F59 RID: 81753
 		public int Max;
 
-		// Token: 0x0400EF29 RID: 61225
+		// Token: 0x04013F5A RID: 81754
 		public int Bean;
 
-		// Token: 0x0400EF2A RID: 61226
+		// Token: 0x04013F5B RID: 81755
 		public int Hide;
 
-		// Token: 0x0400EF2B RID: 61227
+		// Token: 0x04013F5C RID: 81756
 		public int hideNum;
 
-		// Token: 0x0400EF2C RID: 61228
+		// Token: 0x04013F5D RID: 81757
 		public int LifeTime;
 
-		// Token: 0x0400EF2D RID: 61229
+		// Token: 0x04013F5E RID: 81758
 		public int Price;
 
-		// Token: 0x0400EF2E RID: 61230
+		// Token: 0x04013F5F RID: 81759
 		public int purpose;
 
-		// Token: 0x0400EF2F RID: 61231
+		// Token: 0x04013F60 RID: 81760
 		public int Rarity;
 
-		// Token: 0x0400EF30 RID: 61232
+		// Token: 0x04013F61 RID: 81761
 		public int Sort;
 
-		// Token: 0x0400EF31 RID: 61233
+		// Token: 0x04013F62 RID: 81762
 		public int UseMax;
 
-		// Token: 0x0400EF32 RID: 61234
+		// Token: 0x04013F63 RID: 81763
 		public int wd;
 	}
 }
