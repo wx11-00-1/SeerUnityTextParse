@@ -29,17 +29,6 @@ namespace core.config
 			return null;
 		}
 
-		// Token: 0x0600EA29 RID: 59945 RVA: 0x003E69C8 File Offset: 0x003E4BC8
-		public string getIcon(int proID)
-		{
-			int num;
-			if (this.s_ProductMap != null && this.s_ProductMap.TryGetValue(proID, out num))
-			{
-				return ResetableSingleTon<IRootInterface>.Ins.root.item[num].icon;
-			}
-			return string.Empty;
-		}
-
 		// Token: 0x0600EA2A RID: 59946 RVA: 0x003E6A0C File Offset: 0x003E4C0C
 		public string getNameByProID(int proID)
 		{

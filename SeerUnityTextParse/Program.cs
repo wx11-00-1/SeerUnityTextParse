@@ -2,8 +2,8 @@
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
-const string FOLDER_PATH_RESOURSE = "C:\\Users\\Administrator\\Downloads\\game\\Seer\\Resource\\config\\TextAsset\\";
-const string FOLDER_PATH_OUTPUT = "C:\\Users\\Administrator\\Downloads\\game\\Seer\\Resource\\config\\json\\";
+const string FOLDER_PATH_RESOURSE = "C:\\Users\\Administrator\\Downloads\\game\\SeerUnity\\forDll\\config-data\\TextAsset\\";
+const string FOLDER_PATH_OUTPUT = "C:\\Users\\Administrator\\Downloads\\game\\SeerUnity\\forDll\\config-data\\json\\";
 
 byte[] ReadFileByte(string path)
 {
