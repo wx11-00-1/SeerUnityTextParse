@@ -1,47 +1,51 @@
-﻿using System;
-
 namespace core.config
 {
-	// Token: 0x02001E43 RID: 7747
 	public class StoryDialog : XlsConfigBase<StoryDialog, IStoryDialog>
 	{
-		// Token: 0x17001928 RID: 6440
-		// (get) Token: 0x0600E5B2 RID: 58802 RVA: 0x003DFFBE File Offset: 0x003DE1BE
+		private int _ChapterId = 1001;
+
+		private bool b;
+
+		public int ChapterId
+		{
+			get
+			{
+				return _ChapterId;
+			}
+			set
+			{
+				m_IsLoaded = false;
+				_ChapterId = value;
+			}
+		}
+
 		public override string fileName
 		{
 			get
 			{
-				return "story_" + this.ChapterId.ToString();
+				return "story_" + ChapterId;
 			}
 		}
 
-		// Token: 0x0600E5B3 RID: 58803 RVA: 0x003DFFD8 File Offset: 0x003DE1D8
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
-			this.b = ByteUtil.ReadBoolean(bytes, ref byteIndex);
-			if (this.b)
+			b = ByteUtil.ReadBoolean(bytes, ref byteIndex);
+			if (b)
 			{
 				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				this.data = new IStoryDialog[num];
+				data = new IStoryDialog[num];
 				for (int i = 0; i < num; i++)
 				{
-					this.data[i] = new IStoryDialog();
-					this.data[i].Parse(bytes, ref byteIndex);
+					data[i] = new IStoryDialog();
+					data[i].Parse(bytes, ref byteIndex);
 				}
 			}
 		}
 
-		// Token: 0x0600E5B4 RID: 58804 RVA: 0x003E0038 File Offset: 0x003DE238
 		public override void Parse(byte[] bytes)
 		{
-			int num = 0;
-			this.Parse(bytes, ref num);
+			int byteIndex = 0;
+			Parse(bytes, ref byteIndex);
 		}
-
-		// Token: 0x0400EBC9 RID: 60361
-		public int ChapterId = 1001;
-
-		// Token: 0x0400EBCA RID: 60362
-		private bool b;
 	}
 }

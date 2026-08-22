@@ -1,23 +1,21 @@
-﻿using System;
-
 namespace core.config.moves
 {
 	public class IMovesTbl
-    {
-        public IMoves Moves { get; set; }
+	{
+		public IMoves Moves { get; set; }
 
-        public void Parse(byte[] bytes, ref int byteIndex)
-        {
-            int byteIndex2 = byteIndex;
-            if (byteIndex2 < bytes.Length)
-            {
-                if (bytes[byteIndex2++] != 0)
-                {
-                    Moves = new IMoves();
-                    Moves.Parse(bytes, ref byteIndex2);
-                }
-                byteIndex = byteIndex2;
-            }
-        }
-    }
+		public void Parse(byte[] bytes, ref int byteIndex)
+		{
+			int byteIndex2 = byteIndex;
+			if (byteIndex2 < bytes.Length)
+			{
+				if (bytes[byteIndex2++] != 0)
+				{
+					Moves = new IMoves();
+					Moves.Parse(bytes, ref byteIndex2);
+				}
+				byteIndex = byteIndex2;
+			}
+		}
+	}
 }

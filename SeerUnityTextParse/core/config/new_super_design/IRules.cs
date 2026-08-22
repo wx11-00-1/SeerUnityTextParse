@@ -1,28 +1,37 @@
-﻿using System;
+using System;
 
 namespace core.config.new_super_design
 {
-	// Token: 0x02001F8C RID: 8076
 	public class IRules
 	{
-		// Token: 0x17001CD4 RID: 7380
-		// (get) Token: 0x0600F262 RID: 62050 RVA: 0x003F735B File Offset: 0x003F555B
-		// (set) Token: 0x0600F263 RID: 62051 RVA: 0x003F7363 File Offset: 0x003F5563
 		public IRuleItem[] Rule { get; set; }
 
-		// Token: 0x0600F264 RID: 62052 RVA: 0x003F736C File Offset: 0x003F556C
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
-			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			int byteIndex2 = byteIndex;
+			if (byteIndex2 >= bytes.Length)
 			{
-				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				this.Rule = new IRuleItem[num];
-				for (int i = 0; i < num; i++)
+				return;
+			}
+			if (bytes[byteIndex2++] != 0)
+			{
+				if (byteIndex2 + 4 > bytes.Length)
 				{
-					this.Rule[i] = new IRuleItem();
-					this.Rule[i].Parse(bytes, ref byteIndex);
+					return;
+				}
+				int num = BitConverter.ToInt32(bytes, byteIndex2);
+				byteIndex2 += 4;
+				if (num > 0)
+				{
+					Rule = new IRuleItem[num];
+					for (int i = 0; i < num; i++)
+					{
+						Rule[i] = new IRuleItem();
+						Rule[i].Parse(bytes, ref byteIndex2);
+					}
 				}
 			}
+			byteIndex = byteIndex2;
 		}
 	}
 }

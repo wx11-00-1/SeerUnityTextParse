@@ -1,30 +1,33 @@
-﻿
-
-// GameLogic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-// core.config.NewMonsterLevelBisaifu
-using core.config;
-
-public class NewMonsterLevelBisaifu : XlsConfigBase<NewMonsterLevelBisaifu, INewMonsterLevelBisaifuInfo>
+namespace core.config
 {
-    public override string fileName => "new_monster_level_bisaifu";
+	public class NewMonsterLevelBisaifu : XlsConfigBase<NewMonsterLevelBisaifu, INewMonsterLevelBisaifuInfo>
+	{
+		public override string fileName
+		{
+			get
+			{
+				return "new_monster_level_bisaifu";
+			}
+		}
 
-    public void Parse(byte[] bytes, ref int byteIndex)
-    {
-        if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
-        {
-            int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-            data = new INewMonsterLevelBisaifuInfo[num];
-            for (int i = 0; i < num; i++)
-            {
-                data[i] = new INewMonsterLevelBisaifuInfo();
-                data[i].Parse(bytes, ref byteIndex);
-            }
-        }
-    }
+		public void Parse(byte[] bytes, ref int byteIndex)
+		{
+			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			{
+				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+				data = new INewMonsterLevelBisaifuInfo[num];
+				for (int i = 0; i < num; i++)
+				{
+					data[i] = new INewMonsterLevelBisaifuInfo();
+					data[i].Parse(bytes, ref byteIndex);
+				}
+			}
+		}
 
-    public override void Parse(byte[] bytes)
-    {
-        int byteIndex = 0;
-        Parse(bytes, ref byteIndex);
-    }
+		public override void Parse(byte[] bytes)
+		{
+			int byteIndex = 0;
+			Parse(bytes, ref byteIndex);
+		}
+	}
 }

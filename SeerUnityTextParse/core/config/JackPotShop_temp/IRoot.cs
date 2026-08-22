@@ -1,18 +1,16 @@
-﻿using System;
-
 namespace core.config.JackPotShop_temp
 {
 	public class IRoot
-    {
-        public IBlueChipShops BlueChipShops { get; set; }
+	{
+		public IBlueChipShops BlueChipShops { get; set; }
 
-        public void Parse(byte[] bytes, ref int byteIndex)
-        {
-            if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
-            {
-                BlueChipShops = new IBlueChipShops();
-                BlueChipShops.Parse(bytes, ref byteIndex);
-            }
-        }
-    }
+		public void Parse(byte[] bytes, ref int byteIndex)
+		{
+			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			{
+				BlueChipShops = new IBlueChipShops();
+				BlueChipShops.Parse(bytes, ref byteIndex);
+			}
+		}
+	}
 }

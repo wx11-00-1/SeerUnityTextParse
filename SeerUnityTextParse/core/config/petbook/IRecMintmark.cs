@@ -1,28 +1,37 @@
-﻿using System;
+using System;
 
 namespace core.config.petbook
 {
-	// Token: 0x02002061 RID: 8289
 	public class IRecMintmark
 	{
-		// Token: 0x17001D62 RID: 7522
-		// (get) Token: 0x0600F8D4 RID: 63700 RVA: 0x0040EECA File Offset: 0x0040D0CA
-		// (set) Token: 0x0600F8D5 RID: 63701 RVA: 0x0040EED2 File Offset: 0x0040D0D2
 		public IPlaceItem[] place { get; set; }
 
-		// Token: 0x0600F8D6 RID: 63702 RVA: 0x0040EEDC File Offset: 0x0040D0DC
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
-			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			int byteIndex2 = byteIndex;
+			if (byteIndex2 >= bytes.Length)
 			{
-				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				this.place = new IPlaceItem[num];
-				for (int i = 0; i < num; i++)
+				return;
+			}
+			if (bytes[byteIndex2++] != 0)
+			{
+				if (byteIndex2 + 4 > bytes.Length)
 				{
-					this.place[i] = new IPlaceItem();
-					this.place[i].Parse(bytes, ref byteIndex);
+					return;
+				}
+				int num = BitConverter.ToInt32(bytes, byteIndex2);
+				byteIndex2 += 4;
+				if (num > 0)
+				{
+					place = new IPlaceItem[num];
+					for (int i = 0; i < num; i++)
+					{
+						place[i] = new IPlaceItem();
+						place[i].Parse(bytes, ref byteIndex2);
+					}
 				}
 			}
+			byteIndex = byteIndex2;
 		}
 	}
 }

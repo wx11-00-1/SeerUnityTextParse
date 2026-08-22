@@ -521,7 +521,7 @@ namespace core.config
 			{
 				return SkillStudyType.Item;
 			}
-			return SkillStudyType.Activity;
+			return SkillStudyType.None;
 		}
 
 		// Token: 0x0600EB90 RID: 60304 RVA: 0x003EDFB8 File Offset: 0x003EC1B8

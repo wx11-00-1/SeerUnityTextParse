@@ -1,46 +1,79 @@
-﻿using System;
+using System;
+using System.Text;
 
 namespace core.config.petbook
 {
-	// Token: 0x0200205A RID: 8282
 	public class IBranchItem
 	{
-		// Token: 0x17001D48 RID: 7496
-		// (get) Token: 0x0600F892 RID: 63634 RVA: 0x0040E99F File Offset: 0x0040CB9F
-		// (set) Token: 0x0600F893 RID: 63635 RVA: 0x0040E9A7 File Offset: 0x0040CBA7
 		public string intro { get; set; }
 
-		// Token: 0x17001D49 RID: 7497
-		// (get) Token: 0x0600F894 RID: 63636 RVA: 0x0040E9B0 File Offset: 0x0040CBB0
-		// (set) Token: 0x0600F895 RID: 63637 RVA: 0x0040E9B8 File Offset: 0x0040CBB8
 		public IPlaceItem[] place { get; set; }
 
-		// Token: 0x17001D4A RID: 7498
-		// (get) Token: 0x0600F896 RID: 63638 RVA: 0x0040E9C1 File Offset: 0x0040CBC1
-		// (set) Token: 0x0600F897 RID: 63639 RVA: 0x0040E9C9 File Offset: 0x0040CBC9
 		public string title { get; set; }
 
-		// Token: 0x17001D4B RID: 7499
-		// (get) Token: 0x0600F898 RID: 63640 RVA: 0x0040E9D2 File Offset: 0x0040CBD2
-		// (set) Token: 0x0600F899 RID: 63641 RVA: 0x0040E9DA File Offset: 0x0040CBDA
 		public int ID { get; set; }
 
-		// Token: 0x0600F89A RID: 63642 RVA: 0x0040E9E4 File Offset: 0x0040CBE4
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
-			this.ID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-			this.intro = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
-			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			int num = byteIndex;
+			if (num + 4 > bytes.Length)
 			{
-				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				this.place = new IPlaceItem[num];
-				for (int i = 0; i < num; i++)
+				return;
+			}
+			ID = BitConverter.ToInt32(bytes, num);
+			num += 4;
+			if (num + 2 > bytes.Length)
+			{
+				return;
+			}
+			ushort num2 = BitConverter.ToUInt16(bytes, num);
+			num += 2;
+			if (num2 > 0 && num + num2 <= bytes.Length)
+			{
+				intro = Encoding.UTF8.GetString(bytes, num, num2);
+				num += num2;
+			}
+			else
+			{
+				intro = string.Empty;
+			}
+			if (num >= bytes.Length)
+			{
+				return;
+			}
+			if (bytes[num++] != 0)
+			{
+				if (num + 4 > bytes.Length)
 				{
-					this.place[i] = new IPlaceItem();
-					this.place[i].Parse(bytes, ref byteIndex);
+					return;
+				}
+				int num3 = BitConverter.ToInt32(bytes, num);
+				num += 4;
+				if (num3 > 0)
+				{
+					place = new IPlaceItem[num3];
+					for (int i = 0; i < num3; i++)
+					{
+						place[i] = new IPlaceItem();
+						place[i].Parse(bytes, ref num);
+					}
 				}
 			}
-			this.title = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			if (num + 2 <= bytes.Length)
+			{
+				ushort num4 = BitConverter.ToUInt16(bytes, num);
+				num += 2;
+				if (num4 > 0 && num + num4 <= bytes.Length)
+				{
+					title = Encoding.UTF8.GetString(bytes, num, num4);
+					num += num4;
+				}
+				else
+				{
+					title = string.Empty;
+				}
+				byteIndex = num;
+			}
 		}
 	}
 }
