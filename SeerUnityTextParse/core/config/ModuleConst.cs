@@ -784,5 +784,7 @@ namespace core.config
 		public const int ASURA_ARMOR_SHOW_MATCH = 1196;
 
 		public const int GET_ALKT_MAIN = 1200;
+
+		public const int CYRENAICA_MAIN = 1205;
 	}
 }
