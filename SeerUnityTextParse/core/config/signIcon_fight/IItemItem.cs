@@ -12,6 +12,8 @@ namespace core.config.signIcon_fight
 
 		public string NumDes { get; set; }
 
+		public string[] showmonster { get; set; }
+
 		public string[] spDes { get; set; }
 
 		public string[] spicon { get; set; }
@@ -23,8 +25,6 @@ namespace core.config.signIcon_fight
 		public int id { get; set; }
 
 		public int isShowNum { get; set; }
-
-		public int showmonster { get; set; }
 
 		public int showtime { get; set; }
 
@@ -47,34 +47,42 @@ namespace core.config.signIcon_fight
 			}
 			id = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			isShowNum = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-			showmonster = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			{
+				int num2 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+				showmonster = new string[num2];
+				for (int j = 0; j < num2; j++)
+				{
+					showmonster[j] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+				}
+			}
 			showtime = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			sort = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
 			{
-				int num2 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				spDes = new string[num2];
-				for (int j = 0; j < num2; j++)
-				{
-					spDes[j] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
-				}
-			}
-			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
-			{
 				int num3 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				spicon = new string[num3];
+				spDes = new string[num3];
 				for (int k = 0; k < num3; k++)
 				{
-					spicon[k] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+					spDes[k] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 				}
 			}
 			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
 			{
 				int num4 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				sptips = new string[num4];
+				spicon = new string[num4];
 				for (int l = 0; l < num4; l++)
 				{
-					sptips[l] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+					spicon[l] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+				}
+			}
+			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
+			{
+				int num5 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+				sptips = new string[num5];
+				for (int m = 0; m < num5; m++)
+				{
+					sptips[m] = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 				}
 			}
 			tips = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);

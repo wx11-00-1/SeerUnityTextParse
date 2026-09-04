@@ -777,6 +777,8 @@ namespace core.config
 
 		public const int XUANWU_RENASCOR_ACTIVITY = 1124;
 
+		public const int PEAK_JIHAD_COST_MODE = 1180;
+
 		public const int FILMGAME_WORKS_PANEL = 1181;
 
 		public const int AUTO_CARD_KAIJIA = 1187;
@@ -786,5 +788,9 @@ namespace core.config
 		public const int GET_ALKT_MAIN = 1200;
 
 		public const int CYRENAICA_MAIN = 1205;
+
+		public const int TURN_OF_LUCK_SKIN_ACTIVITY = 1207;
+
+		public const int LEVANT_MAIN_PANEL = 1208;
 	}
 }

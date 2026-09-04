@@ -1,12 +1,12 @@
 namespace core.config
 {
-	public class PetCompositio : XlsConfigBase<PetCompositio, IPetCompositioInfo>
+	public class Catrun : XlsConfigBase<Catrun, ICatrunInfo>
 	{
 		public override string fileName
 		{
 			get
 			{
-				return "petCompositio";
+				return "Catrun";
 			}
 		}
 
@@ -15,10 +15,10 @@ namespace core.config
 			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
 			{
 				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				data = new IPetCompositioInfo[num];
+				data = new ICatrunInfo[num];
 				for (int i = 0; i < num; i++)
 				{
-					data[i] = new IPetCompositioInfo();
+					data[i] = new ICatrunInfo();
 					data[i].Parse(bytes, ref byteIndex);
 				}
 			}
