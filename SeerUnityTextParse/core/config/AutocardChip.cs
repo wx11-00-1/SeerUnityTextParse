@@ -1,12 +1,12 @@
 namespace core.config
 {
-	public class AutoCardBuffWiki : XlsConfigBase<AutoCardBuffWiki, IAutoCardBuffWikiInfo>
+	public class AutocardChip : XlsConfigBase<AutocardChip, IAutocardChipInfo>
 	{
 		public override string fileName
 		{
 			get
 			{
-				return "autoCardBuffWiki";
+				return "autocardChip";
 			}
 		}
 
@@ -15,10 +15,10 @@ namespace core.config
 			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
 			{
 				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-				data = new IAutoCardBuffWikiInfo[num];
+				data = new IAutocardChipInfo[num];
 				for (int i = 0; i < num; i++)
 				{
-					data[i] = new IAutoCardBuffWikiInfo();
+					data[i] = new IAutocardChipInfo();
 					data[i].Parse(bytes, ref byteIndex);
 				}
 			}

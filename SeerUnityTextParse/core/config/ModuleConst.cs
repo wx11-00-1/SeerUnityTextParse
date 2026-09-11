@@ -792,5 +792,17 @@ namespace core.config
 		public const int TURN_OF_LUCK_SKIN_ACTIVITY = 1207;
 
 		public const int LEVANT_MAIN_PANEL = 1208;
+
+		public const int GET_HDMZ_MAIN = 907;
+
+		public const int GET_HDMS_MAIN = 1215;
+
+		public const int EXTREME_ICE_AKSIA = 908;
+
+		public const int AUTO_CARD_DIALOG_S2 = 910;
+
+		public const int AUTO_CARD_SESSION_STORE = 1213;
+
+		public const int AKEXIYA_SKIN_ACTIVITY = 1216;
 	}
 }

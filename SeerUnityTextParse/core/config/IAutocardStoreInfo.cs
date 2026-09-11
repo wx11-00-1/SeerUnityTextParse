@@ -1,0 +1,51 @@
+namespace core.config
+{
+	public class IAutocardStoreInfo : IConfigItem
+	{
+		public string commodity { get; set; }
+
+		public string name { get; set; }
+
+		public int consumeitemid { get; set; }
+
+		public int discount { get; set; }
+
+		public int id { get; set; }
+
+		public int limit { get; set; }
+
+		public int price { get; set; }
+
+		public int producttype { get; set; }
+
+		public int quantity { get; set; }
+
+		public int sort { get; set; }
+
+		public int stat { get; set; }
+
+		public int type { get; set; }
+
+		public int userinfo { get; set; }
+
+		public int userinfobitpos { get; set; }
+
+		public void Parse(byte[] bytes, ref int byteIndex)
+		{
+			commodity = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			consumeitemid = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			discount = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			id = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			limit = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			name = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			price = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			producttype = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			quantity = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			sort = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			stat = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			type = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			userinfo = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			userinfobitpos = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+		}
+	}
+}

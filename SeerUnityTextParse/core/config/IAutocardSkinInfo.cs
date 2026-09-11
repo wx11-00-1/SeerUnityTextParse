@@ -26,6 +26,8 @@ namespace core.config
 
 		public int series { get; set; }
 
+		public int session { get; set; }
+
 		public int stat { get; set; }
 
 		public int type { get; set; }
@@ -42,6 +44,7 @@ namespace core.config
 			rarity = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			resource = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			series = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			session = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			skinName = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			stat = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			tag = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);

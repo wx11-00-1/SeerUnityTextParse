@@ -22,6 +22,8 @@ namespace core.config
 
 		public int stat { get; set; }
 
+		public int tag { get; set; }
+
 		public int type { get; set; }
 
 		public int userinfo { get; set; }
@@ -38,6 +40,7 @@ namespace core.config
 			quantity = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			sort = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			stat = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			tag = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			type = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			userinfo = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}

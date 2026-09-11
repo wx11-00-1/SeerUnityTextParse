@@ -22,6 +22,8 @@ namespace core.config
 
 		public int id { get; set; }
 
+		public int rankitem { get; set; }
+
 		public int Rewarduserinfo { get; set; }
 
 		public int sesisson { get; set; }
@@ -38,6 +40,7 @@ namespace core.config
 			decompose = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			id = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			levelinfo = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			rankitem = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			rewardbit = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			sesisson = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}
