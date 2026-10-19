@@ -731,6 +731,8 @@ namespace core.config
 
 		public const int SEVENTEENTH_ANNIVERSARY_PERKS = 1061;
 
+		public const int NATIONAL_DAY_PERKS_2026 = 1220;
+
 		public const int EYES_OF_LAIKA_GAME = 882;
 
 		public const int EYES_OF_LAIKA_GAME_PLAY = 883;
@@ -804,5 +806,31 @@ namespace core.config
 		public const int AUTO_CARD_SESSION_STORE = 1213;
 
 		public const int AKEXIYA_SKIN_ACTIVITY = 1216;
+
+		public const int BUBBLE_ACTIVITY = 1218;
+
+		public const int SLSH_ASK_LEVEL = 1223;
+
+		public const int HUNDI_TIANXUNDAO = 915;
+
+		public const int ZKS_SKIN_BACK = 1229;
+
+		public const int ZKS_NEW_SKIN_PANEL = 1224;
+
+		public const int RAY_GAIA_MAINPANEL = 1225;
+
+		public const int ZHEN_SHI_XUAN_WU = 911;
+
+		public const int LM_AUTUMN_SKIN = 912;
+
+		public const int SIGN_260924 = 913;
+
+		public const int ACTIVITY_MINERAL_SORTER = 1226;
+
+		public const int ORGANIZE_FIREWORK_GAME_PANEL = 1232;
+
+		public const int SHENLING_ZHI_HUN_MAIERSI = 1233;
+
+		public const int STONEBATTLE_ACTIVITY = 1234;
 	}
 }

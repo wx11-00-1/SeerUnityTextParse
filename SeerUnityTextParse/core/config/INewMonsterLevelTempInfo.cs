@@ -28,6 +28,8 @@ namespace core.config
 
 		public int[] upgrade { get; set; }
 
+		public int collective { get; set; }
+
 		public int difficult { get; set; }
 
 		public int fightType { get; set; }
@@ -37,6 +39,8 @@ namespace core.config
 		public int moduleid { get; set; }
 
 		public int monsterid { get; set; }
+
+		public int newSort { get; set; }
 
 		public int sort { get; set; }
 
@@ -50,6 +54,7 @@ namespace core.config
 
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
+			collective = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			difficult = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			fightType = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			hide = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
@@ -76,6 +81,7 @@ namespace core.config
 			}
 			moduleid = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			monsterid = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			newSort = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			param = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
 			{

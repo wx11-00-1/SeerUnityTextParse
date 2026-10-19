@@ -2,6 +2,10 @@ namespace core.config.JackPotShop
 {
 	public class IBulechipShopItem
 	{
+		public string commodity { get; set; }
+
+		public string petinfo { get; set; }
+
 		public string productName { get; set; }
 
 		public int[] productID { get; set; }
@@ -28,8 +32,10 @@ namespace core.config.JackPotShop
 			ID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			Opentime = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			batch = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			commodity = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			exchangeId = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			forever = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			petinfo = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			if (ByteUtil.ReadBoolean(bytes, ref byteIndex))
 			{
 				int num = ByteUtil.ReadSignedInt(bytes, ref byteIndex);

@@ -2,6 +2,8 @@ namespace core.config
 {
 	public class IAutocardCollectSessionInfo : IConfigItem
 	{
+		public string sessionCoin { get; set; }
+
 		public int helptips1 { get; set; }
 
 		public int id { get; set; }
@@ -18,8 +20,6 @@ namespace core.config
 
 		public int redbadge6 { get; set; }
 
-		public int sessionCoin { get; set; }
-
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
 			helptips1 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
@@ -30,7 +30,7 @@ namespace core.config
 			redbadge4 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			redbadge5 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			redbadge6 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-			sessionCoin = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			sessionCoin = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 		}
 	}
 }
