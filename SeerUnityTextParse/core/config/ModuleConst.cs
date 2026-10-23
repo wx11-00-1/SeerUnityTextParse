@@ -825,6 +825,10 @@ namespace core.config
 
 		public const int SIGN_260924 = 913;
 
+		public const int AOLAN = 916;
+
+		public const int AOSILAN = 918;
+
 		public const int ACTIVITY_MINERAL_SORTER = 1226;
 
 		public const int ORGANIZE_FIREWORK_GAME_PANEL = 1232;
