@@ -6,8 +6,6 @@ namespace core.config
 
 		public string describ { get; set; }
 
-		public string name { get; set; }
-
 		public int[] dangoID { get; set; }
 
 		public int actionTeam { get; set; }
@@ -37,7 +35,6 @@ namespace core.config
 			id = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			limitDango = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			limitType = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-			name = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			value = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 		}
 	}

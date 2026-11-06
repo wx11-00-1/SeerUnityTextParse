@@ -2,6 +2,8 @@ namespace core.config.petCompositioDefault
 {
 	public class IMonsterItem
 	{
+		public string Adj { get; set; }
+
 		public string Name { get; set; }
 
 		public int ExtraMove { get; set; }
@@ -16,6 +18,7 @@ namespace core.config.petCompositioDefault
 
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
+			Adj = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			ExtraMove = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			ID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			Lv = ByteUtil.ReadSignedInt(bytes, ref byteIndex);

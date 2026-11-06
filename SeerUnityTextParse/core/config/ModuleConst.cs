@@ -807,6 +807,8 @@ namespace core.config
 
 		public const int AKEXIYA_SKIN_ACTIVITY = 1216;
 
+		public const int LINGSHEN_SKIN_ROLL = 1307;
+
 		public const int BUBBLE_ACTIVITY = 1218;
 
 		public const int SLSH_ASK_LEVEL = 1223;
@@ -829,6 +831,8 @@ namespace core.config
 
 		public const int AOSILAN = 918;
 
+		public const int XUANMINGHUNZHE = 919;
+
 		public const int ACTIVITY_MINERAL_SORTER = 1226;
 
 		public const int ORGANIZE_FIREWORK_GAME_PANEL = 1232;
@@ -836,5 +840,13 @@ namespace core.config
 		public const int SHENLING_ZHI_HUN_MAIERSI = 1233;
 
 		public const int STONEBATTLE_ACTIVITY = 1234;
+
+		public const int FIND_DIFFERENT_GAME_ENTRY = 920;
+
+		public const int FIND_DIFFERENT_GAME = 921;
+
+		public const int TEMPLE_HEROES_NEW = 922;
+
+		public const int PETBOOK_XINGTAI = 1237;
 	}
 }

@@ -24,8 +24,6 @@ namespace core.config
 
 		public int time2 { get; set; }
 
-		public int time3 { get; set; }
-
 		public int type { get; set; }
 
 		public int votenumber { get; set; }
@@ -42,7 +40,6 @@ namespace core.config
 			subkey = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			time1 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			time2 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-			time3 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			type = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			votenumber = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			votepet = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);

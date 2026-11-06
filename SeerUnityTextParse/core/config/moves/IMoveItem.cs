@@ -41,6 +41,8 @@ namespace core.config.moves
 
 		public int Priority { get; set; }
 
+		public int Soercemove { get; set; }
+
 		public int Type { get; set; }
 
 		public void Parse(byte[] bytes, ref int byteIndex)
@@ -203,6 +205,12 @@ namespace core.config.moves
 					num += num6 * 4;
 				}
 			}
+			if (num + 4 > bytes.Length)
+			{
+				return;
+			}
+			Soercemove = BitConverter.ToInt32(bytes, num);
+			num += 4;
 			if (num + 4 > bytes.Length)
 			{
 				return;
