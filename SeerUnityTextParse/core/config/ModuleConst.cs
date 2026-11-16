@@ -848,5 +848,9 @@ namespace core.config
 		public const int TEMPLE_HEROES_NEW = 922;
 
 		public const int PETBOOK_XINGTAI = 1237;
+
+		public const int TRANS_TYCOON = 1320;
+
+		public const int TRAVEL_GAME_ENTRY = 1324;
 	}
 }

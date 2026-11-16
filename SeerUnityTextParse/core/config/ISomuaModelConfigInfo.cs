@@ -2,15 +2,17 @@ namespace core.config
 {
 	public class ISomuaModelConfigInfo : IConfigItem
 	{
+		public string addonPool { get; set; }
+
+		public string addonPoolSP { get; set; }
+
 		public string describe { get; set; }
 
 		public string name { get; set; }
 
-		public string prefix { get; set; }
+		public string naturePool { get; set; }
 
 		public string season { get; set; }
-
-		public string suffix { get; set; }
 
 		public int attackMode { get; set; }
 
@@ -40,6 +42,8 @@ namespace core.config
 
 		public void Parse(byte[] bytes, ref int byteIndex)
 		{
+			addonPool = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			addonPoolSP = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			attackMode = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			attackModeSP = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			describe = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
@@ -54,10 +58,9 @@ namespace core.config
 			isTail = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			isTopwear = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			name = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			naturePool = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			petID = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
-			prefix = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 			season = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
-			suffix = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
 		}
 	}
 }

@@ -18,6 +18,10 @@ namespace core.config
 
 		public int score3 { get; set; }
 
+		public int sort { get; set; }
+
+		public int type { get; set; }
+
 		public int winrate1 { get; set; }
 
 		public int winrate2 { get; set; }
@@ -33,7 +37,9 @@ namespace core.config
 			score1 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			score2 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			score3 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			sort = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			time = ByteUtil.ReadUTFByte(bytes, (int)ByteUtil.ReadUnsignedShort(bytes, ref byteIndex), ref byteIndex);
+			type = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			winrate1 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			winrate2 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			winrate3 = ByteUtil.ReadSignedInt(bytes, ref byteIndex);

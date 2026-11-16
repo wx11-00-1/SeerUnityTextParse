@@ -6,6 +6,8 @@ namespace core.config
 
 		public int attackValue { get; set; }
 
+		public int bodyRatio { get; set; }
+
 		public int criticalChance { get; set; }
 
 		public int criticalDamageRatio { get; set; }
@@ -24,6 +26,7 @@ namespace core.config
 		{
 			attackRatio = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			attackValue = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
+			bodyRatio = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			criticalChance = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			criticalDamageRatio = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
 			defenseRatio = ByteUtil.ReadSignedInt(bytes, ref byteIndex);
